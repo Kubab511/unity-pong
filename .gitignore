@@ -1,8 +1,6 @@
-/.vscode/
 /Build/
 /Library/
 /Logs/
-/Packages/
 /Temp/
 /UserSettings/
 /*.csproj
