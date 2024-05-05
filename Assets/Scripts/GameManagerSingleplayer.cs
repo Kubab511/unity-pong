@@ -11,6 +11,7 @@ public class GameManagerSingleplayer : MonoBehaviour {
     public Text computerScoreText;
     private int playerScore;
     private int computerScore;
+    public AudioSource score;
 
     private void Update() {
         if(Input.GetKey(KeyCode.Escape)) {
@@ -19,12 +20,14 @@ public class GameManagerSingleplayer : MonoBehaviour {
     }
 
     public void PlayerScores() {
+        score.Play();
         playerScore++;
         playerScoreText.text = playerScore.ToString();
         ResetRound();
     }
 
     public void ComputerScores() {
+        score.Play();
         computerScore++;
         computerScoreText.text = computerScore.ToString();
         ResetRound();
@@ -41,5 +44,4 @@ public class GameManagerSingleplayer : MonoBehaviour {
         yield return new WaitForSeconds(seconds);
         ball.AddStartingForce();
     }
-
 }

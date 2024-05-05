@@ -11,6 +11,7 @@ public class GameManagerMultiplayer : MonoBehaviour {
     public Text player2ScoreText;
     private int player1Score;
     private int player2Score;
+    public AudioSource score;
 
     private void Update() {
         if(Input.GetKey(KeyCode.Escape)) {
@@ -19,12 +20,14 @@ public class GameManagerMultiplayer : MonoBehaviour {
     }
 
     public void Player1Scores() {
+        score.Play();
         player1Score++;
         player1ScoreText.text = player1Score.ToString();
         ResetRound();
     }
 
     public void Player2Scores() {
+        score.Play();
         player2Score++;
         player2ScoreText.text = player2Score.ToString();
         ResetRound();
@@ -41,5 +44,4 @@ public class GameManagerMultiplayer : MonoBehaviour {
         yield return new WaitForSeconds(seconds);
         ball.AddStartingForce();
     }
-
 }
