@@ -21,4 +21,8 @@ public class ComputerPaddle : Paddle {
 
         transform.position += direction * Time.deltaTime;
     }
+
+    public void ResetVelocity() {
+        direction = Vector3.zero;
+    }
 }

@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManagerMultiplayer : MonoBehaviour {
     public Ball ball;
-    public Paddle player1Paddle;
-    public Paddle player2Paddle;
+    public PlayerPaddle player1Paddle;
+    public Player2Paddle player2Paddle;
     public Text player1ScoreText;
     public Text player2ScoreText;
     private int player1Score;
@@ -35,7 +35,9 @@ public class GameManagerMultiplayer : MonoBehaviour {
 
     private void ResetRound() {
         player1Paddle.ResetPosition();
+        player1Paddle.ResetVelocity();
         player2Paddle.ResetPosition();
+        player2Paddle.ResetVelocity();
         ball.ResetPosition();
         StartCoroutine(Sleep(3));
     }

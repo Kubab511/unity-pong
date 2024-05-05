@@ -13,4 +13,8 @@ public class PlayerPaddle : Paddle {
 
         transform.position += direction * Time.deltaTime;
     }
+
+    public void ResetVelocity() {
+        direction = Vector3.zero;
+    }
 }
